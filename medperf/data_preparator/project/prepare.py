@@ -1,6 +1,6 @@
-import os, pathlib
 import shutil
 import argparse
+from distutils.dir_util import copy_tree
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Medperf Data Preparator Example")
@@ -11,4 +11,4 @@ if __name__ == '__main__':
 
     pathlib.Path.mkdir(args.out, parents=True, exist_ok=True)
 
-    shutil.copytree(args.input, args.out)
+    copy_tree(args.input, args.out)
